@@ -3,6 +3,18 @@ from django.contrib import admin
 from. models import *
 # Register your models here.
 
+class UsuariosAdmin(admin.MoldelAdmin):
+    #exclude = ['codigo', 'telefono']
+    fieldsets = (
+        ('Datos', {
+            'fields': ('nombre',)
+        }),
+        ('Contacto' , {
+            'fields': ('telefono', 'direccion')
+        })
+    )
+    list_display = ['nombre', 'telefono', 'direccion']
+
 admin.site.register(Autor)
 admin.site.register(Libro)
 admin.site.register(Ejemplar)
