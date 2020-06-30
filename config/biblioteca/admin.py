@@ -15,6 +15,11 @@ class UsuariosAdmin(admin.MoldelAdmin):
     )
     list_display = ['nombre', 'telefono', 'direccion']
 
+class EjemplarAdmin(admin.ModelAdmin):
+    list_filter = ['libro',]
+
+
+
 admin.site.register(Autor)
 admin.site.register(Libro)
 admin.site.register(Ejemplar)
