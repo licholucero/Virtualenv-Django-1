@@ -18,9 +18,13 @@ class UsuariosAdmin(admin.MoldelAdmin):
 class EjemplarAdmin(admin.ModelAdmin):
     list_filter = ['libro',]
 
+class LibroAdmin(admin.ModelAdmin):
+    #filter_vertical = ('titulo' ,)
+    list_display = ['titulo', 'editorial',]
+     
 
 
 admin.site.register(Autor)
-admin.site.register(Libro)
-admin.site.register(Ejemplar)
-admin.site.register(Usuario)
+admin.site.register(Libro, LibroAdmin)
+admin.site.register(Ejemplar, EjemplarAdmin)
+admin.site.register(Usuario,UsuariosAdmin)
